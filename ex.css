@@ -1,0 +1,263 @@
+*{
+	margin: 0;
+	padding: 0;
+
+	box-sizing: inherit;
+}
+body{
+	box-sizing: border-box;
+	font-family: sans-serif;
+	font-size: 10px;
+}
+a{
+	text-decoration: none;
+}
+#wrapper{
+	width: 100%;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 15% auto;
+	grid-template-rows: auto 80%;
+	grid-template-areas:  
+	"sidebar main"
+	"sidebar main"
+	"sidebar footer"
+	;
+}
+.sidebar{
+	grid-area: sidebar;
+	background-color: #2c1b28;
+}
+nav{
+	text-align: center;
+}
+#premier{
+	background-color:white;
+	padding: 1.5rem 0;
+}
+
+#premier a{
+	color: black;
+}
+.brand >.nav-link{
+	font-size: 2rem;
+	color:#2c1b28;
+}
+.nav-list{
+	list-style: none;
+}
+.nav-item {
+	margin: 3rem 0;
+	height: 0px;
+}
+.nav-link{
+	font-size: 11px;
+	color:white;
+	text-transform: uppercase;
+	padding: 1rem;
+}
+.main-content{
+	grid-area: main;
+	background: linear-gradient(326deg,#5f0a87 0%,rgba(164,80,139,0.8)74%),url("ressource/tarte.jpg") center no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.main-content-cta{
+	position: absolute;
+	top: 55%;
+	right: 10%;
+	transform: translateY(-55%);
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+}
+.main-content-cta h1{
+	font-size: 2rem;
+}
+.main-content-cta h6{
+	font-size: .5rem;
+	margin-bottom: 1rem;
+}
+.btn-group{
+	display: flex;
+	margin-bottom: 1rem;
+	justify-content: center;
+}
+.btn{
+	color: #fff;
+	padding: 1rem 2rem;
+	border: 2px solid rgba(255,255,255, .6);
+}
+.btn:first-child{
+	margin-right: 1rem;
+}
+.main-content-cta .date{
+	color: #facc6b;
+	font-size: 2rem;
+}
+.footer{
+	grid-area: footer;
+	background-image: linear-gradient(315deg,#fabc3c 0%,#facc6b 75%);
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+.panc-notic{
+	height: inherit;
+	    width: 30%;
+	max-width: 40rem;
+	background-color: #fff;
+	display: flex;
+	padding: 1rem;
+}
+.panc-notic h1{
+	margin: auto;
+	text-transform: uppercase;
+	position: relative;
+}
+.panc-notic h1::before{
+	content:"";
+	position: absolute;
+	left: 0;
+	bottom:-1.5rem;
+	width: 5.5rem;
+	height: 3px;
+	background-image: linear-gradient(315deg,#fabc3c 0%,#facc6b 75%);
+
+
+}
+.statictics{
+	 padding-right: 10px;
+    padding-left: 10px;
+	
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+}
+.statictics .item{
+	width: 90%;
+	display: flex;
+	align-items: center;
+	color:rgba(255,255,255, .7); 
+
+}
+.statictics .item i{
+	font-size: 1.2rem;
+	padding: 0 1rem;
+}
+.item-desc p{
+	font-size: .8rem;
+}
+.item_desc h1{
+	    padding-top: 20px;
+}
+@media only screen and (max-width: 900px){
+	.brand > .nav-link{
+		font-size:1rem;
+	}
+	.nav-link{
+		font-size: .6rem
+	}
+	.statistics .item i{
+		font-size: .9rem;
+		padding: 0 2rem;
+	}
+	.panc-notic{
+		max-width: 22rem;
+		padding: 1rem
+	}
+	.panc-notic h1{
+		font-size: .8rem;
+	}
+	.item-desc p{
+		font-size: .5rem;
+	}
+}
+@media only screen and (max-width: 778px){
+#wrapper{
+	grid-template-columns: 100% ;
+	grid-template-rows: 10% 100% ;
+	grid-template-areas:  
+	"sidebar "
+	"main"
+	"footer"
+	;
+}
+nav{
+	height: 100%;
+	position:relative;
+}
+.nav-list{
+	height: 100%;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	font-size: 5px;
+}
+#premier{
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: -1.5rem;
+	z-index: 1000;
+	padding: .5rem;
+	
+	border-radius: .8rem;
+	font-size: 13px;
+
+}
+
+.nav-item{
+	margin: auto;
+}
+}
+@media only screen and (max-width: 510px){
+ .main-content-cta{
+ 	top: 50%;
+ 	left: 50%;
+ 	right: initial;
+ 	transform: translate(-50%, -50%);
+ }
+ .panc-notic{
+ 	max-width: initial;
+ 	width: 100%;
+ }
+ .panc-notic h1::before{
+ 	left: 50%;
+ transform: translateX(-50%);
+ bottom: -.7rem;
+
+ }
+ .footer{
+ 	display: flex;
+ 	flex-direction: column;
+ }
+}
+@media only screen and (max-width: 430px){
+	.nav-link{
+		font-size: .5rem;
+	}
+	
+	.btn {
+		padding: .5rem 3rem;
+	}
+	.statictics{
+		flex-direction: column;
+	}
+	.statictics .item{
+		flex-direction: column;
+	}
+	.item-desc{
+		text-align: center;
+		color: #fff;
+		
+	}
+	.item-desc h1{
+		margin: 1rem 0;
+
+	}
+
+	.item-desc p{
+		font-size: 13px;
+	}
+}
